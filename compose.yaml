@@ -1,0 +1,16 @@
+services:
+  love-notes:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8096:8080"
+    environment:
+      PUBLIC_ORIGIN: ${PUBLIC_ORIGIN:?Set PUBLIC_ORIGIN in .env}
+      ADMIN_USERNAME: ${ADMIN_USERNAME:-owner}
+      READER_USERNAME: ${READER_USERNAME:-reader}
+      APP_TIMEZONE: ${APP_TIMEZONE:-UTC}
+      START_DATE: ${START_DATE:-2026-01-01}
+    volumes:
+      - notes-data:/data
+volumes:
+  notes-data:

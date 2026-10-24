@@ -1,0 +1,15 @@
+.git
+.env
+.env.*
+data
+__pycache__
+.venv
+android-widget
+**/build
+*.sqlite*
+*.db*
+*.log
+*.jks
+*.keystore
+*.apk
+*.aab
